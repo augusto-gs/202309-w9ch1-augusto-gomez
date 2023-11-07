@@ -4,6 +4,7 @@ import useMovieApi from "../hooks/useMoviesApi";
 import { useEffect } from "react";
 import { loadFilms } from "../store/features/slices";
 import { useDispatch } from "react-redux";
+import CharacterCard from "../components/CharacterCard/CharacterCard";
 
 const FilmsPage = (): React.ReactElement => {
   const { getFilms } = useMovieApi();
@@ -22,16 +23,16 @@ const FilmsPage = (): React.ReactElement => {
   });
 
   return (
-    <>
+    <section className="movies-list container">
       <h1 className="list-title">Movies list</h1>
       <ul className="movies-list">
         {films.films.map((movie) => (
-          <li>
-            {movie.id} {movie.name} {movie.year}
+          <li key={movie.id}>
+            <CharacterCard movie={movie} />
           </li>
         ))}
       </ul>
-    </>
+    </section>
   );
 };
 

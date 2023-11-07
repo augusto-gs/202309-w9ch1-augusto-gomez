@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import Films from "../store/features/types";
 
 const useMovieApi = () => {
-  const apiUrl = "https://augustos-curated-movie-api.onrender.com/items";
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const getFilms = useCallback(async () => {
     const response = await fetch(apiUrl);
