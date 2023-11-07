@@ -1,6 +1,5 @@
 import { screen } from "@testing-library/react";
 import { renderWithProviders } from "../../mocks/utils/test-utils";
-import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import mainTheme from "../../styles/mainTheme";
 import MovieList from "./MovieList";
@@ -12,9 +11,7 @@ describe("Given a MovieList component", () => {
 
       renderWithProviders(
         <ThemeProvider theme={mainTheme}>
-          <BrowserRouter>
-            <MovieList />
-          </BrowserRouter>
+          <MovieList />
         </ThemeProvider>,
       );
 
