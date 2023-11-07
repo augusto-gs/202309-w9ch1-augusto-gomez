@@ -7,7 +7,12 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "plugin:jsx-a11y/recommended",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "commitlint.config.cjs"],
+  ignorePatterns: [
+    "dist",
+    ".eslintrc.cjs",
+    "commitlint.config.cjs",
+    "./public/_redirects",
+  ],
   parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
   rules: {
