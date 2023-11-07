@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const CharacterCardStyled = styled.article`
+const MovieCardStyled = styled.article`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -28,4 +28,4 @@ const CharacterCardStyled = styled.article`
   }
 `;
 
-export default CharacterCardStyled;
+export default MovieCardStyled;
