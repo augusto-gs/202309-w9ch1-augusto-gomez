@@ -6,7 +6,7 @@ const mainTheme: DefaultTheme = {
   colors: {
     main: "#b80f0a",
     secondary: "#787988",
-    light: "#fff",
+    light: "#ffffff",
   },
 
   tipography: {

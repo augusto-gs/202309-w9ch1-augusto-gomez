@@ -1,5 +1,5 @@
 import Films from "../../store/features/types";
-import MovieCardStyled from "./MovieCard.test";
+import MovieCardStyled from "./MovieCardStyled";
 
 interface MovieCardProps {
   movie: Films;
