@@ -12,7 +12,8 @@ const CharacterCardStyled = styled.article`
   box-shadow: 6px 11px 11px 0px;
 
   .movie__image {
-    border-radius: 33px;
+    border-radius: 33px 33px 0 0;
+    object-fit: cover;
   }
 
   .movie__name {
@@ -23,6 +24,7 @@ const CharacterCardStyled = styled.article`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 10px;
   }
 `;
 
