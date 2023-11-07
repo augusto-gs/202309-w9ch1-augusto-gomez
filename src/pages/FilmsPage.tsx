@@ -6,7 +6,7 @@ import { loadFilms } from "../store/features/slices";
 import { useDispatch } from "react-redux";
 import FilmsPageStyled from "./FilmsPageStyled";
 import Films from "../store/features/types";
-import CharacterCard from "../components/CharacterCard/CharacterCard";
+import MovieCard from "../components/MovieCard/MovieCard";
 
 const FilmsPage = (): React.ReactElement => {
   const { getFilms } = useMovieApi();
@@ -28,7 +28,7 @@ const FilmsPage = (): React.ReactElement => {
       <ul className="movies-list">
         {films.films.map((movie: Films) => (
           <li className="movies-list__item" key={movie.id}>
-            <CharacterCard movie={movie} />
+            <MovieCard movie={movie} />
           </li>
         ))}
       </ul>

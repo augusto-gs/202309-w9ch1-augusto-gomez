@@ -1,14 +1,14 @@
 import Films from "../../store/features/types";
-import CharacterCardStyled from "./CharacterCardStyled";
+import MovieCardStyled from "./MovieCard.test";
 
-interface CharacterCardProps {
+interface MovieCardProps {
   movie: Films;
 }
 
-const CharacterCard = ({
+const MovieCard = ({
   movie: { name, year, image_url, duration },
-}: CharacterCardProps) => (
-  <CharacterCardStyled className="movie">
+}: MovieCardProps) => (
+  <MovieCardStyled className="movie">
     <img
       className="movie__image"
       src={`${image_url}`}
@@ -21,7 +21,7 @@ const CharacterCard = ({
       <span className="movie__year">{`Year: ${year}`}</span>
       <span className="movie__duration">{`Duration: ${duration}`}</span>
     </div>
-  </CharacterCardStyled>
+  </MovieCardStyled>
 );
 
-export default CharacterCard;
+export default MovieCard;
