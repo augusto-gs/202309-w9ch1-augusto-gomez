@@ -5,7 +5,6 @@ const FilmsPageStyled = styled.section`
     text-align: center;
     font-size: 50px;
   }
-
   .movies-list {
     display: flex;
     flex-direction: column;
