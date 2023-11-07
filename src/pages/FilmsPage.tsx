@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { loadFilms } from "../store/features/slices";
 import { useDispatch } from "react-redux";
 import CharacterCard from "../components/CharacterCard/CharacterCard";
+import FilmsPageStyled from "./FilmsPageStyled";
 
 const FilmsPage = (): React.ReactElement => {
   const { getFilms } = useMovieApi();
@@ -18,21 +19,19 @@ const FilmsPage = (): React.ReactElement => {
     })();
   }, [dispatch, getFilms]);
 
-  const films = useAppSelector((state: RootState) => {
-    return state.films;
-  });
+  const films = useAppSelector((state: RootState) => state.films);
 
   return (
-    <section className="movies-list container">
+    <FilmsPageStyled className="container">
       <h1 className="list-title">Movies list</h1>
       <ul className="movies-list">
         {films.films.map((movie) => (
-          <li key={movie.id}>
+          <li className="movies-list__item" key={movie.id}>
             <CharacterCard movie={movie} />
           </li>
         ))}
       </ul>
-    </section>
+    </FilmsPageStyled>
   );
 };
 
