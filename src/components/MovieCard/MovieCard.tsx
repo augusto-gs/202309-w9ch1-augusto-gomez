@@ -20,6 +20,10 @@ const MovieCard = ({
     <div className="movie__info-container">
       <span className="movie__year">{`Year: ${year}`}</span>
       <span className="movie__duration">{`Duration: ${duration}`}</span>
+      <label htmlFor="seen">
+        Seen
+        <input type="checkbox" name="seen" />
+      </label>
     </div>
   </MovieCardStyled>
 );

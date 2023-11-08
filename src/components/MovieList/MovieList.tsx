@@ -2,7 +2,7 @@ import { RootState } from "../../store";
 import { useAppSelector } from "../../store/hooks";
 import useMovieApi from "../../hooks/useMoviesApi";
 import { useEffect } from "react";
-import { loadFilms } from "../../store/features/slices";
+import { loadFilms, setSeenStatus } from "../../store/features/slices";
 import { useDispatch } from "react-redux";
 import Films from "../../store/features/types";
 import MovieCard from "../MovieCard/MovieCard";

@@ -17,9 +17,21 @@ export const filmsSlice = createSlice({
       currentState: FilmStructure,
       action: PayloadAction<Films[]>,
     ): FilmStructure => ({ ...currentState, films: action.payload }),
+
+    setSeenStatus: (
+      currentState: FilmStructure,
+      action: PayloadAction<number>,
+    ): FilmStructure => ({
+      ...currentState,
+      films: currentState.films.map((movie) => ({
+        ...movie,
+        hasBeenSeen:
+          movie.id === action.payload ? !movie.hasBeenSeen : movie.hasBeenSeen,
+      })),
+    }),
   },
 });
 
-export const { loadFilms } = filmsSlice.actions;
+export const { loadFilms, setSeenStatus } = filmsSlice.actions;
 
 export const moviesReducer = filmsSlice.reducer;
