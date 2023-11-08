@@ -12,11 +12,13 @@ const useMovieApi = () => {
 
   const changeSeenMovies = useCallback(
     async (movie: Films) => {
-      await fetch(`${apiUrl}/${movie.id}`, {
+      const response = await fetch(`${apiUrl}/${movie.id}`, {
         method: "PATCH",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ hasBeenWatched: !movie.hasBeenSeen }),
       });
+      if (!response.ok) return false;
+      return true;
     },
     [apiUrl],
   );
