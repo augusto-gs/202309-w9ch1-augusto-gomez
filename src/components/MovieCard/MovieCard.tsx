@@ -3,19 +3,22 @@ import Films from "../../store/features/types";
 import MovieCardStyled from "./MovieCardStyled";
 import { useCallback } from "react";
 import { setSeenStatus } from "../../store/features/slices";
+import useMovieApi from "../../hooks/useMoviesApi";
 
 interface MovieCardProps {
   movie: Films;
 }
 
 const MovieCard = ({
-  movie: { name, year, image_url, duration, id, hasBeenSeen },
+  movie: { name, year, image_url, duration, hasBeenSeen },
+  movie,
 }: MovieCardProps) => {
   const dispatch = useDispatch();
+  const { changeSeenMovies } = useMovieApi();
 
-  const changeSeenStatus = useCallback(() => {
-    dispatch(setSeenStatus(id));
-  }, [dispatch, id]);
+  const changeSeenStatus = useCallback(async () => {
+    (await changeSeenMovies(movie)) ? dispatch(setSeenStatus(movie.id)) : "";
+  }, [changeSeenMovies, dispatch, movie]);
 
   return (
     <MovieCardStyled className="movie">
@@ -34,7 +37,7 @@ const MovieCard = ({
           Seen
           <input type="checkbox" name="seen" onChange={changeSeenStatus} />
         </label>
-        <span>{hasBeenSeen ? "Vista" : "No vista"}</span>
+        <span>{hasBeenSeen ? "Viewed" : "Not viewed"}</span>
       </div>
     </MovieCardStyled>
   );
