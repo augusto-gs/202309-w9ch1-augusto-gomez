@@ -16,7 +16,7 @@ const MovieCard = ({
       width={350}
       height={500}
     />
-    <h1 className="movie__name">{name}</h1>
+    <h2 className="movie__name">{name}</h2>
     <div className="movie__info-container">
       <span className="movie__year">{`Year: ${year}`}</span>
       <span className="movie__duration">{`Duration: ${duration}`}</span>
