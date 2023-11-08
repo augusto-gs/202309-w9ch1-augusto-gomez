@@ -4,6 +4,7 @@ interface Films {
   year: number;
   image_url: string;
   duration: number;
+  hasBeenSeen: boolean;
 }
 
 export default Films;
