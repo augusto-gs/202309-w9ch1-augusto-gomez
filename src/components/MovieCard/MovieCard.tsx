@@ -34,7 +34,7 @@ const MovieCard = ({
           Seen
           <input type="checkbox" name="seen" onChange={changeSeenStatus} />
         </label>
-        <span>{hasBeenSeen ? "Vista" : "No vista"}</span>
+        <span>{hasBeenSeen ? "Viewed" : "Not viewed"}</span>
       </div>
     </MovieCardStyled>
   );
