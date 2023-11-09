@@ -3,6 +3,7 @@ import NewMoviePage from "./NewMoviePage";
 import { ThemeProvider } from "styled-components";
 import mainTheme from "../../styles/mainTheme";
 import { renderWithProviders } from "../../mocks/utils/test-utils";
+import { BrowserRouter } from "react-router-dom";
 
 describe("Given a NewMoviePage component", () => {
   describe("When it is rendered", () => {
@@ -10,9 +11,11 @@ describe("Given a NewMoviePage component", () => {
       const title = "Create your own movie";
 
       renderWithProviders(
-        <ThemeProvider theme={mainTheme}>
-          <NewMoviePage />
-        </ThemeProvider>,
+        <BrowserRouter>
+          <ThemeProvider theme={mainTheme}>
+            <NewMoviePage />
+          </ThemeProvider>
+        </BrowserRouter>,
       );
 
       const expectedTitle = screen.getByRole("heading", { name: title });

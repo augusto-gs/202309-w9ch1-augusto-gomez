@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import Films from "../store/features/types";
+import Films, { UserFilm } from "../store/features/types";
 
 const useMovieApi = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -23,7 +23,17 @@ const useMovieApi = () => {
     [apiUrl],
   );
 
-  return { getFilms, changeSeenMovies };
+  const addMovieToApi = async (movie: UserFilm) => {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(movie),
+    });
+    if (!response.ok) return false;
+    return true;
+  };
+
+  return { getFilms, changeSeenMovies, addMovieToApi };
 };
 
 export default useMovieApi;
