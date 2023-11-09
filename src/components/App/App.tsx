@@ -1,6 +1,6 @@
 import FilmsPage from "../../pages/FilmsPage";
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
-import FormPage from "../../pages/FormPage/FormPage";
+import NewMoviePage from "../../pages/NewMoviePage/NewMoviePage";
 
 const App = (): React.ReactElement => (
   <div className="container">
@@ -16,7 +16,7 @@ const App = (): React.ReactElement => (
       <Routes>
         <Route path="/" element={<Navigate to="/films" />} />
         <Route path="/films" element={<FilmsPage />} />
-        <Route path="/form" element={<FormPage />} />
+        <Route path="/form" element={<NewMoviePage />} />
       </Routes>
     </main>
   </div>

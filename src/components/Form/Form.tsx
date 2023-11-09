@@ -1,6 +1,8 @@
+import FormStyled from "./FormStyled";
+
 const Form = () => {
   return (
-    <form className="form">
+    <FormStyled className="form">
       <label className="form__label" htmlFor="name">
         Name: <input type="text" className="form__input" id="name" />
       </label>
@@ -16,7 +18,7 @@ const Form = () => {
       <label className="form__label" htmlFor="hasBeenSeeen">
         Did you see it? <input type="checkbox" />
       </label>
-    </form>
+    </FormStyled>
   );
 };
 
