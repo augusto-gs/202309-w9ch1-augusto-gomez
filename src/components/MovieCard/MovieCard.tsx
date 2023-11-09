@@ -35,7 +35,12 @@ const MovieCard = ({
         <span className="movie__duration">{`Duration: ${duration}`}</span>
         <label htmlFor="seen">
           Seen
-          <input type="checkbox" name="seen" onChange={changeSeenStatus} />
+          <input
+            type="checkbox"
+            name="seen"
+            checked={hasBeenSeen}
+            onChange={changeSeenStatus}
+          />
         </label>
         <span>{hasBeenSeen ? "Viewed" : "Not viewed"}</span>
       </div>
