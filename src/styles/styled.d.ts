@@ -10,6 +10,7 @@ declare module "styled-components" {
 
     tipography: {
       main: string;
+      size: string;
     };
   }
 }

@@ -1,8 +1,10 @@
+import FormPageStyled from "./FormPageStyled";
+
 const FormPage = () => {
   return (
-    <section className="form-page">
+    <FormPageStyled>
       <h2 className="form-title">Create your own movie</h2>
-    </section>
+    </FormPageStyled>
   );
 };
 

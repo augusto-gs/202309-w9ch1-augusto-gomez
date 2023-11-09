@@ -11,6 +11,7 @@ const mainTheme: DefaultTheme = {
 
   tipography: {
     main: "Source Sans Pro",
+    size: "50px",
   },
 };
 
