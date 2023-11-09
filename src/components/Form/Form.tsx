@@ -3,9 +3,13 @@ import FormStyled from "./FormStyled";
 import { UserFilm } from "../../store/features/types";
 import { useAppDispatch } from "../../store/hooks";
 import { addNewMovieActionCreator } from "../../store/features/slices";
+import useMovieApi from "../../hooks/useMoviesApi";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   const dispatch = useAppDispatch();
+  const { addMovieToApi } = useMovieApi();
+  const navigate = useNavigate();
 
   const emptyMovie: UserFilm = {
     name: "",
@@ -27,12 +31,16 @@ const Form = () => {
     }));
   };
 
-  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
 
-    const addedMovie = { ...newMovie, id: 2 };
+    const addedMovie = { ...newMovie, id: Math.floor(Math.random() * 100000) };
+    const isMovieAddedToApi = await addMovieToApi(newMovie);
+    if (!isMovieAddedToApi) {
+      dispatch(addNewMovieActionCreator(addedMovie));
+    }
 
-    dispatch(addNewMovieActionCreator(addedMovie));
+    navigate("/");
   };
 
   return (
