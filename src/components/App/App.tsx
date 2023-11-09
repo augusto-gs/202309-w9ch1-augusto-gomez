@@ -1,14 +1,15 @@
 import FilmsPage from "../../pages/FilmsPage";
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
 import NewMoviePage from "../../pages/NewMoviePage/NewMoviePage";
+import AppStyled from "./AppStyled";
 
 const App = (): React.ReactElement => (
-  <div className="container">
+  <AppStyled>
     <nav className="navigation-bar">
-      <NavLink to="/form">
-        <span className="navigation-bar__form">Form</span>
+      <NavLink className="navigation-bar__link" to="/new-movie">
+        <span className="navigation-bar__form">Add movies</span>
       </NavLink>
-      <NavLink to="/">
+      <NavLink className="navigation-bar__link" to="/films">
         <span className="navigation-bar__home">Home</span>
       </NavLink>
     </nav>
@@ -16,10 +17,10 @@ const App = (): React.ReactElement => (
       <Routes>
         <Route path="/" element={<Navigate to="/films" />} />
         <Route path="/films" element={<FilmsPage />} />
-        <Route path="/form" element={<NewMoviePage />} />
+        <Route path="/new-movie" element={<NewMoviePage />} />
       </Routes>
     </main>
-  </div>
+  </AppStyled>
 );
 
 export default App;

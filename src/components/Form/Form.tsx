@@ -81,7 +81,7 @@ const Form = () => {
       <label className="form__label" htmlFor="duration">
         Duration:{" "}
         <input
-          type="text"
+          type="number"
           className="form__input"
           id="duration"
           required
@@ -89,7 +89,7 @@ const Form = () => {
           onChange={onChangeData}
         />
       </label>
-      <label className="form__label" htmlFor="hasBeenSeen">
+      <label className="form__label checkbox" htmlFor="hasBeenSeen">
         Did you see it?{" "}
         <input type="checkbox" onChange={onChangeData} id="hasBeenSeen" />
       </label>
