@@ -1,8 +1,12 @@
 import { useState } from "react";
 import FormStyled from "./FormStyled";
 import { UserFilm } from "../../store/features/types";
+import { useAppDispatch } from "../../store/hooks";
+import { addNewMovieActionCreator } from "../../store/features/slices";
 
 const Form = () => {
+  const dispatch = useAppDispatch();
+
   const emptyMovie: UserFilm = {
     name: "",
     year: 0,
@@ -23,8 +27,16 @@ const Form = () => {
     }));
   };
 
+  const onFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event?.preventDefault();
+
+    const addedMovie = { ...newMovie, id: 2 };
+
+    dispatch(addNewMovieActionCreator(addedMovie));
+  };
+
   return (
-    <FormStyled className="form">
+    <FormStyled className="form" onSubmit={onFormSubmit}>
       <label className="form__label" htmlFor="name">
         Name:{" "}
         <input
