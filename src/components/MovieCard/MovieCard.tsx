@@ -17,7 +17,9 @@ const MovieCard = ({
   const { changeSeenMovies } = useMovieApi();
 
   const changeSeenStatus = useCallback(async () => {
-    (await changeSeenMovies(movie)) ? dispatch(setSeenStatus(movie.id)) : "";
+    (await changeSeenMovies(movie))
+      ? dispatch(setSeenStatus(movie.id))
+      : "Error";
   }, [changeSeenMovies, dispatch, movie]);
 
   return (
