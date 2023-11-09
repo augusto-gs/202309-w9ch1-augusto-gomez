@@ -15,7 +15,7 @@ const useMovieApi = () => {
       const response = await fetch(`${apiUrl}/${movie.id}`, {
         method: "PATCH",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ hasBeenWatched: !movie.hasBeenSeen }),
+        body: JSON.stringify({ hasBeenSeen: !movie.hasBeenSeen }),
       });
       if (!response.ok) return false;
       return true;
