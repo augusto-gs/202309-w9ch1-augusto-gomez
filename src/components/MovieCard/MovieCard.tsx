@@ -19,7 +19,7 @@ const MovieCard = ({
   const changeSeenStatus = useCallback(async () => {
     (await changeSeenMovies(movie))
       ? dispatch(setSeenStatus(movie.id))
-      : "Error";
+      : Error("An error has ocurred");
   }, [changeSeenMovies, dispatch, movie]);
 
   return (
@@ -39,7 +39,7 @@ const MovieCard = ({
           Seen
           <input
             type="checkbox"
-            name="seen"
+            id="seen"
             checked={hasBeenSeen}
             onChange={changeSeenStatus}
           />
