@@ -7,7 +7,7 @@ const App = (): React.ReactElement => (
   <AppStyled>
     <nav className="navigation-bar">
       <NavLink className="navigation-bar__link" to="/new-movie">
-        <span className="navigation-bar__form">Add movies</span>
+        Add movies
       </NavLink>
       <NavLink className="navigation-bar__link" to="/films">
         <span className="navigation-bar__home">Home</span>

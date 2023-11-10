@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const MovieListStyled = styled.section`
+const MovieListStyled = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
