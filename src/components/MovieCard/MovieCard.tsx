@@ -36,7 +36,7 @@ const MovieCard = ({
         <span className="movie__year">{`Year: ${year}`}</span>
         <span className="movie__duration">{`Duration: ${duration}`}</span>
         <label htmlFor="seen">
-          Seen
+          Seen{" "}
           <input
             type="checkbox"
             id="seen"

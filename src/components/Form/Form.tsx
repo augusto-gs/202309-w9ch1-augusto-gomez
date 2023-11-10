@@ -68,7 +68,7 @@ const Form = () => {
         />
       </label>
       <label className="form__label" htmlFor="imageUrl">
-        Image Url:
+        Image Url:{" "}
         <input
           type="url"
           className="form__input"
